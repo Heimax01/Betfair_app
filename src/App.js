@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import api from './services/api';
 
 function App() {
+
+  useEffect(() => {
+
+      const requestFilters = '{"filter":{}}';
+
+      api.post('/listEventTypes',{}, {headers: {
+         'Content-Type': 'application/json',
+         'X-Application': 'C1l1lzS5QDKHsXqp',
+         'X-Authentication' : 'tyhvUoWpbjX/MRg1GSEx99ah6Sdggfb6HaWNHXiSe80=',
+       }}).then(response => {
+        console.log(response.data);
+      });
+      
+    
+
+    
+  }, [])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      
     </div>
   );
 }
