@@ -5,7 +5,7 @@ function App() {
 
   useEffect(() => {
 
-      const requestFilters = '{"filter":{}}';
+      
 
       api.post('/listEventTypes',{}, {headers: {
          'Content-Type': 'application/json',
