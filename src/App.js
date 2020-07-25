@@ -20,15 +20,17 @@ function App() {
 
         const config = {
           headers: {
-            'Content-Type': 'application/json',
             'X-Application': 'C1l1lzS5QDKHsXqp',
             'X-Authentication': '92i7ocKfGzh89M4KcimsWQ/obZIpAvbA+ybWSNcIFdE=',
+            'cccept': 'application/json',
+            'content-type': 'application/json',
           }
         };             
 
 
       const response = await axios.post('https://api.betfair.com/exchange/betting/rest/v1.0/listEventTypes',data, config)
 
+    
       console.log(`Status: ${response.status}`);
       console.log(`Content Type: ${response.headers['Content-Type']}`);
       console.log(`X-Application: ${response.headers['X-Application']}`);
