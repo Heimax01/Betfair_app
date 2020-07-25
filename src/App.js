@@ -9,8 +9,9 @@ function App() {
 
 
     const listData =  async () => {
-       const response = await api.post('/listEvents',{
-        filter: {eventTypeIds:["1"],marketCountries:["FI"]}
+       const response = await api.post('/listEventTypes',{
+        filter: {}
+        //eventTypeIds:["1"],marketCountries:["FI"]
       })
 
       console.log(response.data)
