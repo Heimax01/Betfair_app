@@ -7,13 +7,18 @@ function App() {
 
       
 
-      api.post('/listEventTypes',{}, {headers: {
-         'Content-Type': 'application/json',
-         'X-Application': 'C1l1lzS5QDKHsXqp',
-         'X-Authentication' : 'tyhvUoWpbjX/MRg1GSEx99ah6Sdggfb6HaWNHXiSe80=',
-       }}).then(response => {
-        console.log(response.data);
-      });
+
+    const listData =  async () => {
+       const response = await api.post('/listEvents',{
+        filter: {eventTypeIds:["1"],marketCountries:["FI"]}
+      })
+
+      console.log(response.data)
+    }
+   
+    listData()
+    
+
       
     
 
